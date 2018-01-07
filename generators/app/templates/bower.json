@@ -1,0 +1,21 @@
+{
+  "name": "project-start",
+  "description": "",
+  "main": "n",
+  "authors": [
+    "newyorrker <newyorrker@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/newyorrker/project-start",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "slick-carousel": "^1.8.1"
+  }
+}

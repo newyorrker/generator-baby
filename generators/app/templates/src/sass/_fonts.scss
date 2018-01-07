@@ -1,0 +1,24 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+@font-face {
+    font-family: "font-name";
+    src: url("../fonts/font-name/font-name-extralight.eot");
+    src: url("../fonts/font-name/font-name-extralight.eot") format('embedded-opentype'),
+         url("../fonts/font-name/font-name-extralight.woff") format("woff"),
+         url("../fonts/font-name/font-name-extralight.ttf") format("truetype"),
+         url("../fonts/font-name/font-name-extralight.svg#JournalRegular") format("svg");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "font-name";
+    src: url("../fonts/font-name/font-name-reg.eot");
+    src: url("../fonts/font-name/font-name-reg.eot") format('embedded-opentype'),
+         url("../fonts/font-name/font-name-reg.woff") format("woff"),
+         url("../fonts/font-name/font-name-reg.ttf") format("truetype"),
+         url("../fonts/font-name/font-name-reg.svg#JournalRegular") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}

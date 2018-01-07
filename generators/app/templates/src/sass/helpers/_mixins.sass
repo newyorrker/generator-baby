@@ -1,0 +1,42 @@
+// width
+=r($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+=rmax($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+// height
+=rh($height)
+  @media only screen and (max-height: $height + "px")
+    @content
+
+=rhmin($height)
+  @media only screen and (min-height: $height + "px")
+    @content
+
+
+%pseudo
+  position: relative
+  &:before,&:after
+    content: ' '
+    position: absolute
+    top: 0
+    left: 0
+=pseudo
+  @extend %pseudo
+
+// vertical-align at center
+=vcenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+
+=clr
+  &:after
+    content: " "
+    display: table
+    clear: both

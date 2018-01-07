@@ -1,0 +1,21 @@
+{#% import "partials/_mixins.html" as mixins %#}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!-- BEGIN content -->
+
+      {% block content %}{% endblock %}
+
+    <!-- END content -->
+
+    <!-- BEGIN scripts -->
+      {% block scripts %}{% endblock %}
+    <!-- END scripts -->
+  </body>
+</html>

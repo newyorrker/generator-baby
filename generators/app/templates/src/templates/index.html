@@ -1,0 +1,22 @@
+{% set title = "<%= _.kebabCase(name) %>" %}
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{# variable example #}
+	<h1>{{title}}</h1>
+
+	{# HEADER #}
+	{% include "partials/_header.html" %}
+	{# HEADER #}
+
+	{# CONTENT #}
+
+	{# CONTENT #}
+
+
+{% endblock %}
+{% block scripts %}
+	{% include "partials/_scripts.html" %}
+{% endblock %}

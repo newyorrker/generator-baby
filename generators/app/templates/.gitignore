@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules/
+template/
+src/libs/
+package-lock.json
+*.psd
