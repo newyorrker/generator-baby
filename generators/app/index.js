@@ -29,6 +29,19 @@ module.exports = class extends Yeoman {
   }
   writing() {
     writeFiles.call(this);
+    this._writeGit();
+    this._writeBower();
+  }
+  _writeGit() {
+    this.fs.copy(
+      this.templatePath('gitignore'),
+      this.destinationPath('.gitignore'));
+  }
+  _writeBower() {
+    this.fs.copy(
+      this.templatePath('bowerrc'),
+      this.destinationPath('.bowerrc')
+    );
   }
   install () {
     this.log('Please create new repository for your new project');
