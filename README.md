@@ -13,7 +13,7 @@ npm install -g generator-baby
 Then generate your new project:
 
 ```bash
-yo bra
+yo baby
 ```
 
 ## Getting To Know Yeoman

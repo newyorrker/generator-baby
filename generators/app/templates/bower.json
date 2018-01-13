@@ -1,12 +1,12 @@
 {
-  "name": "project-start",
+  "name": "<%= _.kebabCase(name) %>",
   "description": "",
   "main": "n",
   "authors": [
-    "newyorrker <newyorrker@gmail.com>"
+    "<%= _.kebabCase(gitUser) %>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/newyorrker/project-start",
+  "homepage": "<%= repoName %>",
   "ignore": [
     "**/.*",
     "node_modules",
