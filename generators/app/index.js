@@ -3,16 +3,15 @@ const Yeoman = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
-const prompts    = require('./promts');
+const prompts = require('./promts');
 const writeFiles = require('./writing');
-
 
 module.exports = class extends Yeoman {
   initializing() {
     // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the striking ' + chalk.red('generator-baby') + ' generator!'
-    ));
+    this.log(
+      yosay('Welcome to the striking ' + chalk.red('generator-baby') + ' generator!')
+    );
   }
   prompting() {
     return this.prompt(prompts).then(props => {
@@ -33,19 +32,17 @@ module.exports = class extends Yeoman {
     this._writeBower();
   }
   _writeGit() {
-    this.fs.copy(
-      this.templatePath('gitignore'),
-      this.destinationPath('.gitignore'));
+    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
   }
   _writeBower() {
-    this.fs.copy(
-      this.templatePath('bowerrc'),
-      this.destinationPath('.bowerrc')
-    );
+    this.fs.copy(this.templatePath('.bowerrc'), this.destinationPath('.bowerrc'));
   }
-  install () {
+  install() {
     this.log('Please create new repository for your new project');
-    this.log('In order to create Github repository follow the link ' + chalk.red('https://github.com/new'));
+    this.log(
+      'In order to create Github repository follow the link ' +
+        chalk.red('https://github.com/new')
+    );
     if (this.props.addRemote) {
       this.spawnCommand('git', ['remote', 'add', 'origin', this.props.repoName + '.git']);
     }
