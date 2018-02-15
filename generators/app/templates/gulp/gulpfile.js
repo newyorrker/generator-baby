@@ -1,4 +1,3 @@
-
 var gulp = require('gulp');
 var config = require('./config');
 var postcss = require('gulp-postcss');
@@ -28,10 +27,8 @@ var processors = [
 
 gulp.task('prod', function () {
   return gulp.src(config.src.sass + '/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass(config.sass).on('error', sass.logError))
+    .pipe(sass({outputStyle: "compressed"}).on('error', sass.logError))
     .pipe(postcss(processors))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.dest.css));
 });
 
@@ -43,6 +40,7 @@ gulp.task('sass', function () {
   return gulp.src(config.src.sass + '/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass(config.sass).on('error', sass.logError))
+    .pipe(postcss(processors))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.dest.css));
 });
@@ -52,7 +50,7 @@ gulp.task('sass', function () {
 //--------------------------------------------------------------
 
 gulp.task('img-copy', function () {
-  return gulp.src(config.src.img + '/*.{png,jpg}')
+  return gulp.src(config.src.img + '/*.{png,jpg,svg}')
     .pipe(gulp.dest(config.dest.img));
 });
 
@@ -118,10 +116,11 @@ gulp.task('sprite', function () {
 // START SERVER
 //--------------------------------------------------------------
 
-gulp.task('default', ['prod', 'nun', 'js-copy', 'serve'], function () {
+gulp.task('default', ['sass', 'nun', 'js-copy', 'serve'], function () {
     gulp.watch("./src/sass/*.scss", ['sass']);
     gulp.watch("./src/templates/**/*.html", ['nun']);
     gulp.watch("./src/js/**/*.js", ['js-copy']);
+    gulp.watch("./src/img/**/*.{png,jpg,svg}", ['img-copy']);
 });
 
 gulp.task('serve', function() {
@@ -132,11 +131,8 @@ gulp.task('serve', function() {
     });
 
     browserSync.watch('public/**/*.*').on('change', browserSync.reload);
-    // browserSync.watch('public/*.html').on('change', browserSync.reload);
 
 });
-
-
 
 
 function isMax(mq) {
