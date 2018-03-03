@@ -1,10 +1,10 @@
 /* LIBS */
 @import "../libs/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../libs/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid",
-				"../libs/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework",
-				"../libs/bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
+				"../libs/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
 @import "../libs/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 @import "../libs/slick-carousel/slick/slick.scss";
+@import "../libs/magnific-popup/src/css/main.css";
 
 //--------------------------------------------------------------
 // Helper SASS
@@ -13,7 +13,7 @@
 @import  	"font-awesome";
 @import  	"fonts";
 @import  	"variables";
-// @import 	"sprite";
+@import 	"sprite";
 
 //--------------------------------------------------------------
 // CUSTOM STYLES

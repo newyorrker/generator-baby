@@ -4,14 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{up}}css/main.css">
   </head>
   <body>
+    {# HEADER #}
+      {% include "partials/_header.html" %}
+    {# HEADER #}
     <!-- BEGIN content -->
 
       {% block content %}{% endblock %}
 
     <!-- END content -->
+
+    {# FOOTER #}
+      {% include "partials/_footer.html" %}
+    {# FOOTER #}
 
     <!-- BEGIN scripts -->
       {% include "partials/_scripts.html" %}
