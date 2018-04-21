@@ -4,3 +4,109 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+.container-fluid {
+	min-width: 315px;
+	max-width: 1230px;
+	margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+	& *, *:before, *:after {
+		box-sizing: border-box;
+	}
+	@include md {
+		padding-left: 45px;
+		padding-right: 45px;
+	}
+	@include lg {
+		max-width: 1230px;
+	}
+}
+
+//section-header
+	.section-header {
+		h2, h3, h4, h5 {
+			font-size: 43px;
+			text-transform: uppercase;
+		}
+		p {
+			font-size: 18px;
+			margin-top: 15px;
+		}
+		@include md {
+			h2, h3, h4, h5 {
+				line-height: 1.25;
+			}
+			p {
+				margin-top: 29px;
+			}
+		}
+		@include lg {
+			text-align: center;
+			p {
+					margin-top: 14px;
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+// including snippets!
+
+
+
+
+// ---- logo ----
+	.logo {
+
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+	}
+
+
+
+// ---- header ----
+	.header {
+
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+
+
+
+// ---- footer ----
+	.footer {
+
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
