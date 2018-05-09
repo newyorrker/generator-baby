@@ -33,8 +33,16 @@ var config = {
         lib  : destPath + '/lib'
     },
     sass: {
-        outputStyle: 'expanded'
-    }
+        compressed: {
+            outputstyle: 'compressed'
+        },
+        expanded: {
+            outputstyle: 'expanded'
+        }
+    },
+    setEnv: function(env) {
+        this.dev = env;
+    },
 
 };
 
