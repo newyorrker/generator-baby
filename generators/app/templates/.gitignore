@@ -5,3 +5,4 @@ template/
 src/libs/
 package-lock.json
 *.psd
+*.DS_Store
