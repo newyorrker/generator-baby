@@ -2,16 +2,16 @@ const path = require('path');
 const _ = require('lodash');
 const user = require('yeoman-generator/lib/actions/user');
 
-function makeProjectName(name) {
-  name = _.kebabCase(name);
+function appName() {
+  name = _.kebabCase(path.basename(process.cwd()));
   return name;
 }
-function makeGitUser(gitUser) {
-  gitUser = _.kebabCase(gitUser);
+function gitUser() {
+  gitUser = _.kebabCase(user.git.name());
   return gitUser;
 }
 function makeRepo(repoName) {
-  repoName = 'https://github.com/' +  user.git.name() + '/' + _.kebabCase(repoName);
+  repoName = 'https://github.com/' + user.git.name() + '/' + _.kebabCase(repoName);
   return repoName;
 }
 
@@ -19,31 +19,42 @@ module.exports = [
   {
     name: 'name',
     message: 'Your project name',
-    default: makeProjectName(path.basename(process.cwd())),
-    filter: makeProjectName
+    default: appName
   },
   {
     name: 'gitUser',
     message: 'Your GitHub username',
-    default: user.git.name(),
-    filter: makeGitUser
-  },
+    default: gitUser
+  }, // Разветвление
   {
     name: 'repoName',
     message: 'GitHub repository name',
-    default: makeProjectName(path.basename(process.cwd())),
+    default: appName,
     filter: makeRepo
   },
   {
     type: 'confirm',
+    name: 'createRepo',
+    message: 'Create a new Repository? (Only for mac users)',
+    default: false
+  },
+  {
+    when: function(response) {
+      if (response.createRepo) {
+        return false;
+      }
+      return true;
+    },
+    type: 'confirm',
     name: 'emptyRepo',
-    message: 'Initialize empty Git repository in project?',
+    message: 'OK, maybe initialize empty Git repository in project?',
     default: true
   },
   {
-    type: 'confirm',
-    name: 'addRemote',
-    message: 'Add remote to repository from Github?',
+    type: 'list',
+    name: 'bundle',
+    message: 'Choose a js bundler?',
+    choices: ['Browserify', 'Manual'],
     default: false
   },
   {
