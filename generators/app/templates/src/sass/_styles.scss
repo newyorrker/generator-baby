@@ -51,7 +51,23 @@ html {
 	}
 
 
+/* utilites */
 
+// ---- block light ----
+
+	.dark-block {
+		&, & a {
+			color: white;
+		}
+	}
+	.light-block {
+		& {
+			color: $color;
+		}
+		a {
+			color: inherit;
+		}
+	}
 
 
 
