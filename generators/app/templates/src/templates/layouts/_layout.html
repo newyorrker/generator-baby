@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="{{up}}css/main.css">
   </head>
   <body>
-    {# HEADER #}
-      {% include "partials/_header.html" %}
-    {# HEADER #}
-    <!-- BEGIN content -->
+    <div class="page">
+      {# HEADER #}
+        {% include "partials/_header.html" %}
+      {# HEADER #}
+      <!-- BEGIN content -->
 
-      {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-    <!-- END content -->
+      <!-- END content -->
 
-    {# FOOTER #}
-      {% include "partials/_footer.html" %}
-    {# FOOTER #}
+      {# FOOTER #}
+        {% include "partials/_footer.html" %}
+      {# FOOTER #}
+    </div>
+    <div class="out-Page-Content">
+      {# popups #}
+    </div>
+
 
     <!-- BEGIN scripts -->
       {% include "partials/_scripts.html" %}
