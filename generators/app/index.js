@@ -60,7 +60,8 @@ module.exports = class extends Yeoman {
   install() {
     if (this.props.install) {
       this.installDependencies({
-        npm: true
+        npm: true,
+        bower: false
       });
     } else {
       this.log('Run ' + chalk.blue('npm install') + ' to install dependencies later');
