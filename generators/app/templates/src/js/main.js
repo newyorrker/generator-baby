@@ -1,8 +1,8 @@
 require('./libs.js');
+require('./callback.js');
 
 jQuery(document).ready(function($) {
 
-	console.log('hello world');
 
 });
 
