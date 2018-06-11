@@ -8,10 +8,9 @@ const csso 						= require('postcss-csso');
 const $ = gulpLoadPlugins();
 
 // postcss processors
-let processors = [];
-let mq = mqpacker({sort: sortMediaQueries})
 
-processors = [
+let mq = mqpacker({sort: sortMediaQueries})
+let processors = [
 	autoprefixer({
 			browsers: ['last 4 versions'],
 			cascade: false
