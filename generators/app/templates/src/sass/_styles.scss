@@ -1,60 +1,47 @@
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	line-height: 1.5;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
-.container-fluid {
-	min-width: 315px;
-	max-width: 1230px;
-	margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-	& *, *:before, *:after {
-		box-sizing: border-box;
-	}
-	@include md {
-		padding-left: 45px;
-		padding-right: 45px;
-	}
-	@include lg {
-		max-width: 1230px;
-	}
-}
+@import "blocks/containers";
 
-//section-header
+@import "blocks/page";
+@import "blocks/main";
+@import "blocks/logo";
+@import "blocks/M-nav";
+@import "blocks/main-nav";
+
+
+// ---- section-header ----
 	.section-header {
-		h2, h3, h4, h5 {
-			font-size: 43px;
+		h1, h2, h3, h4, h5 {
+			font-size: 38px;
 			text-transform: uppercase;
 		}
 		p {
-			font-size: 18px;
-			margin-top: 15px;
+			// font-size: 18px;
+			// margin-top: 15px;
 		}
 		@include md {
 			h2, h3, h4, h5 {
-				line-height: 1.25;
+				// line-height: 1.25;
 			}
 			p {
-				margin-top: 29px;
+				// margin-top: 29px;
 			}
 		}
 		@include lg {
-			text-align: center;
 			p {
-					margin-top: 14px;
+					// margin-top: 14px;
 			}
 		}
 	}
 
-
-/* utilites */
-
 // ---- block light ----
-
 	.dark-block {
 		&, & a {
 			color: white;
@@ -69,19 +56,87 @@ html {
 		}
 	}
 
+// ---- btn ----
+	.btn {
+		display: block;
+		height: 42px;
+		border: 1px solid grey;
+		border-radius: 0;
+		transition: all .25s;
+		// typo
+			font-size: 14px;
+			font-weight: 500;
+			text-align: center;
+			text-decoration: none;
+		&:hover {
+			transform: translateY(1px);
+			box-shadow: 0 1px 3px 0px rgba(0,0,0,0.25);
+		}
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+
+		}
+	}
+	.btn--M {
+		width: 67px;
+		height: 55px;
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -49%);
+		}
+	}
+	.btn--white {
+		color: black !important;
+		background-color: white;
+		border: 0;
+	}
+	.btn--black {
+		color: black;
+		border-color: black;
+	}
+	.btn--red {
+		color: white;
+		font-size: 26px;
+		background-color: $color;
+	}
 
 
+// ---- header ----
+	.header {
+		padding-top: 10px;
+		&__buttons {
+			display: none;
+		}
+		&__contacsBlock {
+			display: none;
+		}
+		&__main-nav {
+			margin-top: 25px;
+		}
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
+			//
+		}
+	}
 
-
-
-
-// including snippets!
-
-
-
-
-// ---- logo ----
-	.logo {
+// ---- footer ----
+	.footer {
+		margin-top: 20px;
+		border-top: 1px #eee solid;
 
 		//media stack
 		@include rmax(468) {
@@ -95,11 +150,59 @@ html {
 		}
 	}
 
+// ---- map ----
+	.map {
+		position: relative;
+		clear: both;
+		&__contact-block {
+			position: absolute;
+			top: 59%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		iframe {
+			display: block;
+		}
+		//media stack
+		@include rmax(468) {
+			//
+		}
+		@include md {
+			//
+		}
+		@include lg {
 
+		}
+	}
 
-// ---- header ----
-	.header {
+// ---- callback ----
+	.callback {
+		input[type='text'],
+		input[type='phone'],
+		input[type='email'] {
+			//
+		}
 
+		&__submit {
+
+		}
+		&__submit.proccess {
+			&:after {
+				display: inline-block;
+				content: '';
+				border: 3px solid rgba(255, 255, 255, 0.6);
+				border-left-color: #2d3ca7;
+				border-radius: 50%;
+				width: 20px;
+				height: 20px;
+				animation: donut-spin 1.2s linear infinite;
+			}
+			&:after { // Pseudo position
+				position: absolute;
+				top: 33%;
+				left: 7px;
+			}
+		}
 		//media stack
 		@include rmax(468) {
 			//
@@ -110,19 +213,15 @@ html {
 		@include lg {
 			//
 		}
+	}
 
 
-
-// ---- footer ----
-	.footer {
-
-		//media stack
-		@include rmax(468) {
-			//
+//keyframes
+	@keyframes donut-spin {
+		0% {
+			transform: rotate(0deg);
 		}
-		@include md {
-			//
+		100% {
+			transform: rotate(360deg);
 		}
-		@include lg {
-			//
-		}
+	}
