@@ -1,0 +1,17 @@
+<div class="callback">
+	<div class="callback__header">
+		<h5>Header</h5>
+		<p>sub-header</p>
+	</div>
+	<form class="callback__form" method="post" action="/wp-content/themes/{{title}}/callback.php" _lpchecked="1">
+		<input class="callback__input" name="_name_" type="text" placeholder="Ваше имя" required>
+		<input class="callback__input" name="_phone_" type="tel" placeholder="Ваш телефон" required>
+		<input class="callback__input" name="_email_" type="email" placeholder="Ваш Email" required>
+		<div class="callback__no-spam">
+			<input id="killer" name="killer" type="checkbox">
+			<label id="verfy" class="verfy">Я не робот</label>
+		</div>
+		<button class="btn callback__submit">Submit</button>
+		<p class="callback__fz">Нажимая "Отправить", Вы принимаете условия Соглашения на обработку персональных данных.</p>
+	</form>
+</div>
