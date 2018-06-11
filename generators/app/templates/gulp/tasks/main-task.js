@@ -4,18 +4,14 @@ const runSequence = require('run-sequence');
 const browserSync = require('browser-sync').create();
 
 gulp.task('serve', function() {
+		browserSync.init({
+				server: {
+						baseDir: "./public"
+				}
+		});
 
-	browserSync.init({
-		server: {
-				baseDir: "./public"
-		},
-		files: [
-			config.src.templates + '/**/*.html',
-			config.src.sass + '/**/*.{scss,sass}',
-			config.src.img + '/**/*',
-			config.src.js + '/**/*'
-		],
-	});
+		browserSync.watch('public/**/*.*').on('change', browserSync.reload);
+
 });
 
 gulp.task('default', function(cb) {
