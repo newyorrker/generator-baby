@@ -1,0 +1,44 @@
+// ---- M-nav ----
+.M-nav
+	background-color: #282827
+	&__list
+		padding-top: 30px
+		padding-left: 15px
+		& li
+			margin-bottom: 25px
+			a
+				font-size: 19px
+				text-transform: uppercase
+				text-decoration: none
+				&:link
+					color: grey
+				&:hover,
+				&:active
+					color: $color
+				&:visited
+					color: grey
+	&__drop
+		margin-bottom: 0 !important
+		a
+			color: $color
+	&__sub
+		display: none
+		margin-top: 20px
+		li
+			font-size: 16px !important
+	&.closed
+		margin-left: -100%
+
+	//responsive stack
+	+rmax(468)
+		padding: 0 0 53px
+
+	+md
+		&__list
+			padding-left: 45px
+
+		&.closed
+			margin-left: -110%
+
+	+lg
+		display: none
