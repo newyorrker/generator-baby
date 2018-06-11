@@ -1,12 +1,13 @@
-jQuery(document).ready(function($) {
+import Inputmask from "inputmask";
 
+jQuery(document).ready(function($) {
 	const formMarkup =
 		`<form class="white-popup callback" method="post" action="callback.php">
 			<input name="Name" type="text" placeholder="Ваше имя" required>
 			<input name="Phone" type="tel" placeholder="Ваш телефон" required>
 			<input name="Email" type="email" placeholder="Ваш email" required>
 			<div class="callback__no-spam">
-				<label class="verfy">
+				<label class="verify">
 					<input class="killer" id="killer" name="killer" type="checkbox">
 					<span>Я не робот</span>
 				</label>
@@ -17,7 +18,7 @@ jQuery(document).ready(function($) {
 	const successMarkup =
 		`<div id="success-popup" class="white-popup mfp-hide">
 		  <h5>Ваше сообщение отправлено</h5>
-		</div>`
+		</div>`;
 	$('.open-popup-link').magnificPopup({
 		items: {
 			type: 'inline',
@@ -30,13 +31,13 @@ jQuery(document).ready(function($) {
 
 		// валидация на спам
 		let killer = $(form).find('.killer');
-		let verify = $(form).find('.verfy');
+		let verify = $(form).find('.verify');
 
-		this.block = function () {
+		let block = function () {
 			verify.find('span').text('Пожалуйста пройдите проверку!');
 			verify.addClass('red');
 		}
-		this.pass = function () {
+		let pass = function () {
 			verify.find('span').text('Я не робот');
 			verify.removeClass('red');
 			form.reset();
@@ -44,9 +45,9 @@ jQuery(document).ready(function($) {
 
 		if (killer.prop('checked')) {
 			sendEmail($(form));
-			this.pass();
+			pass();
 		} else {
-			this.block();
+			block();
 		}
 	}
 
@@ -71,7 +72,12 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	$('.callback').on('submit', function (e) {
+	$(document).on('focus', 'input[type="tel"]', function(event) {
+		var im = new Inputmask("8(999) 999-9999");
+		im.mask($('input[type="tel"]'));
+	});
+
+	$(document).on('submit', '.callback', function (e) {
 		fromValidate(this, e);
 	});
 
