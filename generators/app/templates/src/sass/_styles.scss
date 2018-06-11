@@ -2,6 +2,8 @@ html {
 	box-sizing: border-box;
 	font-family: sans-serif;
 	line-height: 1.5;
+	// background-color: red;
+
 }
 *, *:before, *:after {
 	box-sizing: inherit;
@@ -16,7 +18,7 @@ html {
 @import "blocks/main-nav";
 
 
-// ---- section-header ----
+//section-header
 	.section-header {
 		h1, h2, h3, h4, h5 {
 			font-size: 38px;
@@ -42,6 +44,7 @@ html {
 	}
 
 // ---- block light ----
+
 	.dark-block {
 		&, & a {
 			color: white;
@@ -175,16 +178,43 @@ html {
 		}
 	}
 
+
+
+
+//keyframes
+	@keyframes donut-spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+
+
 // ---- callback ----
 	.callback {
 		input[type='text'],
-		input[type='phone'],
+		input[type='tel'],
 		input[type='email'] {
-			//
+			display: block;
+			height: 30px;
+			font-size: 16px;
+			border: 1px grey solid;
+			margin-bottom: 7px;
+			padding-left: 5px;
 		}
-
+		&__no-spam {
+			.verify.red {
+				color: red;
+			}
+		}
 		&__submit {
-
+			width: 191px;
+			background-color: gold;
+			color: black;
+			position: relative;
 		}
 		&__submit.proccess {
 			&:after {
@@ -199,7 +229,7 @@ html {
 			}
 			&:after { // Pseudo position
 				position: absolute;
-				top: 33%;
+				top: 28%;
 				left: 7px;
 			}
 		}
@@ -215,13 +245,16 @@ html {
 		}
 	}
 
-
-//keyframes
-	@keyframes donut-spin {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
+.white-popup {
+	background-color: white;
+  width: 450px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+	width: auto;
+}
+.mfp-close-btn-in .mfp-close {
+	font-size: 30px;
+}
