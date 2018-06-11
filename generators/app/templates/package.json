@@ -9,7 +9,9 @@
   "repository": "https://github.com/newyorrker/<%= _.kebabCase(name) %>.git",
   "license": "ISC",
   "dependencies": {
-    "flexboxgrid-delta": "0.0.1"
+    "flexboxgrid-delta": "0.0.1",
+    "inputmask": "^4.0.0",
+    "magnific-popup": "^1.1.0"
     <% if (bundle === 'Browserify') { %>,
     "jquery": "^3.3.1"
     <% } %>
