@@ -9,23 +9,22 @@
   <body>
     <div class="page">
       {# HEADER #}
-        {% include "partials/_header.html" %}
+        {% include "layouts/_header.html" %}
       {# HEADER #}
-      <!-- BEGIN content -->
 
-        {% block content %}{% endblock %}
+      <!-- BEGIN content -->
+      <main class="main">
+        {% block content %}
+
+        {% endblock %}
+      </main>
 
       <!-- END content -->
 
       {# FOOTER #}
-        {% include "partials/_footer.html" %}
+        {% include "layouts/_footer.html" %}
       {# FOOTER #}
     </div>
-    <div class="out-Page-Content">
-      {# popups #}
-    </div>
-
-
     <!-- BEGIN scripts -->
       {% include "partials/_scripts.html" %}
     <!-- END scripts -->
