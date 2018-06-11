@@ -18,9 +18,9 @@ gulp.task('js', function () {
 	return browserify({
     entries: config.src.js + '/main.js'
   })
-		.transform(babelify, { presets: ['es2015'] })
+		.transform(babelify, { presets: ['env'] })
     .bundle()
-      .pipe(source('main.bundle.js'))
+      .pipe(source('bundle.js'))
       .pipe(buffer())
     	.pipe($.if(config.dev, $.sourcemaps.init()))
       .pipe($.if(!config.dev, $.uglify()))
