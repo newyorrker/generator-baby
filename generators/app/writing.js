@@ -22,14 +22,20 @@ module.exports = function() {
       props
     );
     this.fs.copyTpl(
-      this.templatePath('_package.json'),
+      this.templatePath('package.json'),
       this.destinationPath('package.json'),
       props
     );
     this.fs.copy(
-      this.templatePath('gulpfile.json'),
-      this.destinationPath('gulpfile.json')
+      this.templatePath('gulpfile.js'),
+      this.destinationPath('gulpfile.js')
     );
+    if (props.bundle === 'Webpack') {
+      this.fs.copy(
+        this.templatePath('webpack.config.js'),
+        this.destinationPath('webpack.config.js')
+      );
+    }
   };
 
   this._writeGulp = () => {
@@ -76,6 +82,12 @@ module.exports = function() {
     );
 
     switch (props.bundle) {
+      case 'Webpack':
+        this.fs.copy(
+          this.templatePath('gulp/tasks/webpack.js'),
+          this.destinationPath('gulp/tasks/webpack.js')
+        );
+        break;
       case 'Browserify':
         this.fs.copy(
           this.templatePath('gulp/tasks/browserify.js'),
