@@ -1,4 +1,4 @@
-import Inputmask from "inputmask";
+import Inputmask from "inputmask/dist/inputmask/inputmask.numeric.extensions";
 
 jQuery(document).ready(function($) {
 	const formMarkup =
@@ -72,13 +72,14 @@ jQuery(document).ready(function($) {
 		});
 	}
 
-	$(document).on('focus', 'input[type="tel"]', function(event) {
-		var im = new Inputmask("8(999) 999-9999");
-		im.mask($('input[type="tel"]'));
-	});
-
 	$(document).on('submit', '.callback', function (e) {
 		fromValidate(this, e);
+	});
+
+	var im = new Inputmask("8(999) 999-9999");
+
+	$(document).on('focus', '.callback input[type="tel"]', function(event) {
+		im.mask($('input[type="tel"]'));
 	});
 
 });
