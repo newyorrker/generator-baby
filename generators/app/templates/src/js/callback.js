@@ -19,6 +19,7 @@ jQuery(document).ready(function($) {
 		`<div id="success-popup" class="white-popup mfp-hide">
 		  <h5>Ваше сообщение отправлено</h5>
 		</div>`;
+
 	$('.open-popup-link').magnificPopup({
 		items: {
 			type: 'inline',
@@ -55,19 +56,18 @@ jQuery(document).ready(function($) {
 		$.ajax({
 		type: 'POST',
 		beforeSend: function (argument) {
-			$('.callback button').addClass('process');
+			$('.callback button').addClass('proccess');
 		},
 		data: mailForm.serialize(),
 		url: mailForm.attr('action'),
 		dataType: 'html',
 		success: function(data) {
-			// $('.callback button').removeClass('process');
-			// $.magnificPopup.open({
-			// 	items: {
-			// 		src: '#success-popup'
-			// 	}
-			// }, 0);
-			alert(data);
+			$('.callback button').removeClass('proccess');
+			$.magnificPopup.open({
+				items: {
+					src: successMarkup
+				}
+			}, 0);
 		}
 		});
 	}
