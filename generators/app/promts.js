@@ -54,7 +54,7 @@ module.exports = [
     type: 'list',
     name: 'bundle',
     message: 'Choose a js bundler?',
-    choices: ['Webpack', 'Browserify', 'Manual'],
+    choices: ['Webpack', 'Manual'],
     default: 'Webpack'
   },
   {

@@ -13,9 +13,6 @@
     "inputmask": "^4.0.0",
     "magnific-popup": "^1.1.0",
     "vanilla-lazyload": "^8.7.1"
-    <% if (bundle === 'Browserify') { %>,
-    "jquery": "^3.3.1"
-    <% } %>
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -24,14 +21,6 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.0-beta.3",
     "babel-preset-env": "^1.7.0",<% } %>
-    "browser-sync": "^2.18.13",<% if (bundle === 'Browserify') { %>
-    "browserify": "^16.2.0",
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "babel-preset-env": "^1.7.0",
-    "babel-core": "^6.26.3",
-    "babelify": "^8.0.0",
-    "vinyl-source-stream": "^2.0.0",
-    "gulp-babel": "^7.0.1",<% } %>
     "css-mqpacker": "^6.0.1",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
