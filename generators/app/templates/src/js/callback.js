@@ -2,7 +2,7 @@ import Inputmask from "inputmask";
 
 jQuery(document).ready(function($) {
 	const formMarkup =
-		`<form class="white-popup callback" method="post" action="callback.php">
+		`<form class="white-popup callback" method="post" action=" wp-content/themes/<%= _.kebabCase(name) %>/inc/callback.php">
 			<input name="Name" type="text" placeholder="Ваше имя" required>
 			<input name="Phone" type="tel" placeholder="Ваш телефон" required>
 			<input name="Email" type="email" placeholder="Ваш email" required>
