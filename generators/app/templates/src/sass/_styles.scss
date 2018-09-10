@@ -2,7 +2,7 @@ html {
 	box-sizing: border-box;
 	font-family: sans-serif;
 	line-height: 1.5;
-	// background-color: red;
+	font-size: 16px;
 
 }
 *, *:before, *:after {
@@ -118,7 +118,6 @@ html {
 
 // ---- header ----
 	.header {
-		padding-top: 10px;
 		&__buttons {
 			display: none;
 		}
