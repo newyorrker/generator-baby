@@ -1,22 +1,18 @@
 <header class="header page__header">
 
 	<div class="container-fluid">
+		<div class="header__burger header__M-button">
+			<div id="btn" class="burger-btn closed btn--M">
+				<span></span>
+			</div>
+		</div>
 		<div class="header__logo">
 				<!-- partial - logo -->
 				{% include "partials/_logo.html" %}
 				<!-- partial - logo -->
 		</div>
 
-		<div class="header__buttons">
-			<div class="header__burger header__M-button">
-				<div id="btn" class="burger-btn closed btn--M">
-					<span></span>
-				</div>
-			</div>
-			<div class="header__M-button">
-				<a href="#" class="btn btn--M"></a>
-			</div>
-		</div>
+
 
 		<div class="header__main-nav">
 			<!-- partial - main-nav -->
@@ -24,7 +20,7 @@
 			<!-- partial - main-nav -->
 		</div>
 
-		<div class="header__M-nav" style="display: none;">
+		<div class="header__M-nav">
 			<!-- partial - M-nav -->
 			{% include "partials/_M-nav.html" %}
 			<!-- partial - M-nav -->
