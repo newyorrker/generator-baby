@@ -1,0 +1,36 @@
+{% set title = "page-single" %}
+{% set up = "../"%}
+{% set var = "var"%}
+
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	<!-- start page content -->
+
+		{# CONTENT #}
+			<div class="main__page container-fluid">
+				<article class="post main__post">
+					<h1 class="post__header">Post header</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+					<div class="grid-sample-container">
+						<div class="row start-xs bottom-xs">
+							<div class="col-xs-3"><div class="simple-box">1</div></div>
+							<div class="col-xs-4"><div class="simple-box">1</div></div>
+							<div class="col-xs-5"><div class="simple-box">1</div></div>
+							<div class="col-xs-5"><div class="simple-box">1</div></div>
+							<div class="col-xs-4"><div class="simple-box">1</div></div>
+							<div class="col-xs-3"><div class="simple-box">1</div></div>
+						</div>
+					</div>
+				</article>
+			</div>
+		{# CONTENT #}
+
+	<!-- end page content -->
+
+{% endblock %}
