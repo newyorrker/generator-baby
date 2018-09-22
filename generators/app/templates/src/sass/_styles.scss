@@ -10,7 +10,7 @@ html {
 }
 
 @import "blocks/containers";
-
+@import "blocks/burger";
 @import "blocks/page";
 @import "blocks/main";
 @import "blocks/logo";
@@ -24,22 +24,11 @@ html {
 			font-size: 38px;
 			text-transform: uppercase;
 		}
-		p {
-			// font-size: 18px;
-			// margin-top: 15px;
-		}
 		@include md {
 			h2, h3, h4, h5 {
-				// line-height: 1.25;
-			}
-			p {
-				// margin-top: 29px;
 			}
 		}
 		@include lg {
-			p {
-					// margin-top: 14px;
-			}
 		}
 	}
 
@@ -112,20 +101,21 @@ html {
 		font-size: 26px;
 		background-color: $color;
 	}
-	.btn--card {
-		color: orange;
-	}
+	.btn--card { color: orange }
 
 // ---- header ----
 	.header {
-		&__buttons {
-			display: none;
-		}
 		&__contacsBlock {
 			display: none;
 		}
 		&__main-nav {
-			margin-top: 25px;
+			margin-top: 80px;
+		}
+		&__logo {
+			top: 0;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 		//media stack
 		@include rmax(468) {
@@ -135,7 +125,13 @@ html {
 			//
 		}
 		@include lg {
-			//
+			&__burger {
+				display: none;
+				visibility: hidden;
+			}
+			&__logo {
+				position: static;
+			}
 		}
 	}
 
@@ -143,7 +139,6 @@ html {
 	.footer {
 		margin-top: 20px;
 		border-top: 1px #eee solid;
-
 		//media stack
 		@include rmax(468) {
 			//
