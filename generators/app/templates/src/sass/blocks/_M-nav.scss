@@ -1,0 +1,68 @@
+// ---- M-nav ----
+.M-nav {
+	background-color: #282827;
+	top: 0;
+	left: 0;
+	transform: translate3d(-100%,0,0);
+	position: absolute;
+	z-index: 1001;
+	width: 300px;
+	height: 100%;
+	padding: 2.5em 1.5em 0;
+	transition: transform 0.4s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	.btn-close {
+		color: white;
+		font-size: 24px;
+	}
+	&__list {
+		padding-top: 30px;
+		padding-left: 15px;
+		& li {
+			margin-bottom: 25px;
+			a {
+				font-size: 19px;
+				text-transform: uppercase;
+				text-decoration: none;
+				&:link {
+					color: grey;
+				}
+				&:hover,
+				&:active {
+					color: $color;
+				}
+				&:visited {
+					color: grey;
+				}
+			}
+		}
+	}
+	//responsive stack
+	@include rmax(468) {
+
+	}
+	@include md {
+		width: 33%;
+		&__list {
+			padding-left: 45px;
+		}
+	}
+	@include lg {
+
+	}
+}
+
+/* Shown menu */
+.show-menu .M-nav {
+	transform: translate3d(0,0,0);
+	transition: transform 0.8s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+
+.show-menu .page::before {
+	opacity: 1;
+	transition: opacity 0.8s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transform: translate3d(0,0,0);
+}
