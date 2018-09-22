@@ -1,0 +1,29 @@
+/* ---- page ---- */
+.page {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: stretch;
+	justify-content: space-between;
+	min-height: 100vh;
+	&__header {}
+	&__footer {
+		padding-top: 35px;
+		padding-bottom: 50px;
+	}
+	&__s-1 {
+		// padding: 0
+		margin-top: 20px;
+	}
+	//media stack
+	@include rmax(468) {
+		//
+	}
+
+	@include md {
+		//
+	}
+
+	@include lg {
+		//
+	}
+}
