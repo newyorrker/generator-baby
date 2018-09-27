@@ -38,6 +38,8 @@
     "gulp-watch": "^5.0.0",
     "gulp.spritesmith": "^6.7.0",
     "merge-stream": "^1.0.1",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^6.0.0",
     "postcss-csso": "^3.0.0",
     "require-dir": "^0.3.2",
     "run-sequence": "^2.2.1",

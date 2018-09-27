@@ -11,14 +11,15 @@ const $ = gulpLoadPlugins();
 //--------------------------------------------------------------
 
 gulp.task('images', function(){
-  return gulp.src(config.src.img + '/*.{png,jpg,jpeg,svg}')
-    .pipe($.if(!config.dev,
-			$.imagemin({verbose: true},
-			{
-				interlaced: true,
-				progressive: false,
-				optimizationLevel: 3,
-			})))
+	return gulp.src(config.src.img + '/*.{png,jpg,jpeg,svg}')
+		.pipe($.if(!config.dev,
+			$.imagemin(
+				[
+					mozjpeg({quality: 60, progressive: true}),
+					pngQuant({quality: 0})
+				],
+				{verbose: true}
+			)))
 		.pipe(gulp.dest(config.dest.img));
 });
 
