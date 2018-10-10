@@ -1,8 +1,10 @@
 const gulp 	 					= require('gulp');
 const config 					= require('../config');
 const watch 					= require('gulp-watch');
-const runSequence = require('run-sequence');
+const runSequence 		= require('run-sequence');
 const gulpLoadPlugins = require('gulp-load-plugins');
+const mozjpeg 				= require('imagemin-mozjpeg');
+const pngQuant 				= require('imagemin-pngquant');
 
 const $ = gulpLoadPlugins();
 
@@ -12,6 +14,7 @@ const $ = gulpLoadPlugins();
 
 gulp.task('images', function(){
 	return gulp.src(config.src.img + '/*.{png,jpg,jpeg,svg}')
+		.pipe($.newer(config.dest.img))
 		.pipe($.if(!config.dev,
 			$.imagemin(
 				[
