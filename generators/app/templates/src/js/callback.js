@@ -15,10 +15,11 @@ jQuery(document).ready(function($) {
 			<button class="btn callback__submit">send</button>
 			<p class="callback__fz">Нажимая "Отправить", Вы принимаете условия Соглашения на обработку персональных данных.</p>
 		</form>`;
-	const successMarkup =
-		`<div id="success-popup" class="white-popup mfp-hide">
-		  <h5>Ваше сообщение отправлено</h5>
-		</div>`;
+	const successMarkup = (data) => {
+		return `<div id="success-popup" class="white-popup">
+						  <h5>${data}</h5>
+						</div>`;
+	}
 
 	$('.open-popup-link').magnificPopup({
 		items: {
@@ -65,7 +66,7 @@ jQuery(document).ready(function($) {
 			$('.callback button').removeClass('proccess');
 			$.magnificPopup.open({
 				items: {
-					src: successMarkup
+					src: successMarkup(data)
 				}
 			}, 0);
 		}
