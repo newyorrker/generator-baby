@@ -111,12 +111,6 @@ html {
 		&__main-nav {
 			margin-top: 80px;
 		}
-		&__logo {
-			top: 0;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-		}
 		//media stack
 		@include rmax(468) {
 			//
@@ -128,9 +122,6 @@ html {
 			&__burger {
 				display: none;
 				visibility: hidden;
-			}
-			&__logo {
-				position: static;
 			}
 		}
 	}
